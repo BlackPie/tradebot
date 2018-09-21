@@ -18,12 +18,12 @@ timeseries = zip(timestamps, values)
 
 def is_it_time_to_buy(timestamp, value, timeseries) -> bool:
     # TODO: implement this
-    return random.random() <= 0.01
+    return random.random() <= 0.02
 
 
 def is_time_to_sell(timestamp, value, timeseries) -> bool:
     # TODO: implement this
-    return random.random() <= 0.01
+    return random.random() <= 0.02
 
 
 orders = list()
@@ -32,7 +32,7 @@ profit = 0
 plt.plot(timestamps, values)
 
 for timestamp, value in timeseries:
-    if is_it_time_to_buy(timestamp, value, timeseries):
+    if not bought and is_it_time_to_buy(timestamp, value, timeseries):
         bought = 1
         orders.append((timestamp, value))
 
